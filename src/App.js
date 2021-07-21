@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import "./App.css"
+import Items from "./Items"
+
+const itemName = "itemName"
+const buttonText = "+ Add"
 
 function App() {
+  const [items, setItems] = useState([])
+  const [currentItem, changeItem] = useState("")
+  const handleChange = (event) => {
+    changeItem(event.target.value)
+  }
+  const handleClick = () => {
+    setItems((preItem) => {
+      return [...preItem, { item: currentItem }]
+    })
+  }
+  console.log(items)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <header>TO DO LIST</header>
+      <div className="notes-container">
+        <input name={itemName} value={currentItem} onChange={handleChange} />
+        <h1> value of current Item is {currentItem}</h1>
+
+        <button onClick={handleClick}>{buttonText}</button>
+        <Items items={items} />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
