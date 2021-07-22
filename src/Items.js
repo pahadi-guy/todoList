@@ -1,19 +1,27 @@
 import React from "react"
+import { v4 as uuidv4 } from "uuid"
 function Items(props) {
-  const { items } = props
-  console.log(items)
+  console.log(props)
+  const { items, strike, handleDelete, handleDone } = props
+
   return (
-    <div>
-      <ul>
-        {items &&
-          items.map((value, i) => {
-            return (
-              <li key={i}>
-                data is {value.item} and key is {i}
-              </li>
-            )
-          })}
-      </ul>
+    <div className="item-container">
+      {items &&
+        [...items].map((value) => {
+          const key = uuidv4()
+          const { item, id: itemId, css } = value
+          return (
+            <div key={key}>
+              <div className="button-container">
+                <button onClick={() => handleDelete(itemId)}>Delete</button>
+                <button onClick={() => handleDone(itemId)}>Done</button>
+              </div>
+              <p className={strike ? "strike" : ""}>
+                {item} {css}
+              </p>
+            </div>
+          )
+        })}
     </div>
   )
 }

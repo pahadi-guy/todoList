@@ -20,3 +20,16 @@ header{
   width: 50%;
   
 }
+
+.item-container li{
+margin: 1rem 0;
+
+padding: 0.4rem 0;
+}
+
+.strike{
+  text-decoration: line-through;
+}
+.button-container{
+  display: inline;
+}
