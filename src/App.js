@@ -8,38 +8,31 @@ const buttonText = "+ Add"
 
 function App() {
   const [items, setItems] = useState([])
-  const [currentItem, changeItem] = useState("")
-  const [strike, setstrike] = useState(false)
+  const [currentItem, setCurrentItem] = useState("")
+  const [strike, setStrike] = useState({})
 
   const handleChange = (event) => {
-    changeItem(event.target.value)
-  }
-  const handleClick = () => {
-    setItems((preItem) => {
-      return [...preItem, { item: currentItem, id: uuidv4(), css: "" }]
-    })
-    changeItem("")
+    setCurrentItem(event.target.value)
   }
 
-  const handleDone = (idx) => {
-    if (!idx) {
-      console.log("Element Not Found")
+  const handleAddClick = () => {
+    setItems((preItem) => [...preItem, { item: currentItem, id: uuidv4() }])
+    setCurrentItem("")
+  }
+
+  const handleDone = (itemId) => {
+    if (!itemId) {
+      console.log("idx not found.")
       return
     }
-    const index = items.findIndex((x) => x.id === idx)
-
-    console.log(items[index])
-    console.log(index)
-
-    setstrike(true)
-    let tempitems = [...items]
-    tempitems.css = strike
+    const tempStrike = { ...strike }
+    const doneStatus = tempStrike[itemId]
+    tempStrike[itemId] = !doneStatus
+    setStrike(tempStrike)
   }
+
   const handleDelete = (idx) => {
-    console.log(idx)
     const index = items.findIndex((x) => x.id === idx)
-    console.log(items)
-    console.log(index)
     const tempitems = [...items]
     tempitems.splice(index, 1)
     setItems(tempitems)
@@ -50,12 +43,12 @@ function App() {
       <header>TO DO LIST</header>
       <div className="notes-container">
         <input name={itemName} value={currentItem} onChange={handleChange} />
-        <button onClick={handleClick}>{buttonText}</button>
+        <button onClick={handleAddClick}>{buttonText}</button>
         <Items
-          items={items}
-          strike={strike}
           handleDelete={handleDelete}
           handleDone={handleDone}
+          items={items}
+          strike={strike}
         />
       </div>
     </div>
