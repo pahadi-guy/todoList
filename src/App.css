@@ -21,7 +21,8 @@ header{
   
 }
 
-.item-container li{
+
+container{
 margin: 1rem 0;
 
 padding: 0.4rem 0;
@@ -29,7 +30,35 @@ padding: 0.4rem 0;
 
 .strike{
   text-decoration: line-through;
+  padding: 0.4rem;
+  border-radius: 30px;
+  font-weight: bolder;
+  background-color: rgb(255, 211, 211);
+
 }
 .button-container{
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  width: 08%;
+  padding-right: 20px;
+  margin-left: 10px;
+
 }
+
+
+.item-container{
+  display: flex;
+  flex-direction: row;
+align-items: center;
+border: black 2px solid;
+margin: 0.7rem 0;
+font-size: 20px;
+-webkit-box-shadow: 5px 6px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    5px 6px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         5px 6px 5px 0px rgba(50, 50, 50, 0.75);
+background-color: cornsilk;
+
+transition: all .2s ease-in-out; 
+}
+
+.item-container:hover { transform: scale(1.1); }
