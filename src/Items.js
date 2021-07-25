@@ -2,6 +2,7 @@ import React from "react"
 import { v4 as uuidv4 } from "uuid"
 
 function Items(props) {
+  console.log("props ", props)
   const { items, strike, handleDelete, handleDone } = props
 
   return (

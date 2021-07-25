@@ -28,7 +28,9 @@ function App() {
     const tempStrike = { ...strike }
     const doneStatus = tempStrike[itemId]
     tempStrike[itemId] = !doneStatus
+
     setStrike(tempStrike)
+    console.log("TempStrike", tempStrike)
   }
 
   const handleDelete = (idx) => {
