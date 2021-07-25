@@ -51,7 +51,7 @@ function App() {
 
     //const index = items.findIndex((x) => x.id === itemId)
     items.map((items) =>
-      items.id === itemId ? { ...items, isDone: !items.isDone } : Object
+      items.id === itemId ? { ...items, isDone: !items.isDone } : items
     )
 
     // Strike Using State
