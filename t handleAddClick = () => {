@@ -1,0 +1,35 @@
+[33mcommit a8b9871481fc8758fbd42e148ceb0cca1a3536fa[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Vikas Uniyal <vikas110395@gmail.com>
+Date:   Sun Jul 25 20:54:49 2021 +0530
+
+    DropDown
+
+[33mcommit 91b94445fac757285c08e1ae1fc23d9859c912c3[m
+Author: Vikas Uniyal <vikas110395@gmail.com>
+Date:   Sun Jul 25 12:15:31 2021 +0530
+
+    Added filter functionality
+
+[33mcommit da499a5021f2d417f220d7e2f26f2c6c26e0c880[m
+Author: DysphoricDysphoria <anmolkhurana91@gmail.com>
+Date:   Thu Jul 22 22:51:56 2021 +0530
+
+    Code Review. Debug strike-through logic.
+
+[33mcommit f2d8a29796527b173bdf6bbf657fb5673859b6c5[m
+Author: Vikas Uniyal <vikas110395@gmail.com>
+Date:   Thu Jul 22 22:26:13 2021 +0530
+
+    All changes
+
+[33mcommit db006089d1a3d561568807e9ae84b9ecf1695a0a[m
+Author: Vikas Uniyal <vikas110395@gmail.com>
+Date:   Wed Jul 21 09:16:07 2021 +0530
+
+    Adding files to github repo
+
+[33mcommit be0c76a65827cee14eb2b113a4de1fd3c98a0308[m
+Author: Vikas Uniyal <vikas110395@gmail.com>
+Date:   Tue Jul 20 11:33:08 2021 +0530
+
+    Initialize project using Create React App

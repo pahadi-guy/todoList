@@ -38,7 +38,7 @@ function App() {
       ...preItem,
       { item: currentItem, id: uuidv4(), isDone: false },
     ])
-    setCurrentItem("")
+    // setCurrentItem("")
   }
 
   const handleDone = (itemId) => {
@@ -50,9 +50,13 @@ function App() {
     //Strike by updating value inside object
 
     //const index = items.findIndex((x) => x.id === itemId)
-    items.map((items) =>
-      items.id === itemId ? { ...items, isDone: !items.isDone } : items
-    )
+    items.map((tempValue) => {
+      console.log(tempValue)
+
+      return tempValue.id === itemId
+        ? { ...tempValue, isDone: !tempValue.isDone }
+        : tempValue
+    })
 
     // Strike Using State
     const tempStrike = { ...strike }
