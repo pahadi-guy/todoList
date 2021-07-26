@@ -26,7 +26,7 @@ const initialItems = [
 function App() {
   const [items, setItems] = useState(initialItems)
   const [currentItem, setCurrentItem] = useState("")
-  const [strike, setStrike] = useState({})
+
   const [selectedValue, SetSelectedValue] = useState("")
 
   const handleChange = (event) => {
@@ -49,21 +49,13 @@ function App() {
 
     //Strike by updating value inside object
 
-    //const index = items.findIndex((x) => x.id === itemId)
-    items.map((tempValue) => {
-      console.log(tempValue)
-
-      return tempValue.id === itemId
-        ? { ...tempValue, isDone: !tempValue.isDone }
-        : tempValue
-    })
+    const index = items.findIndex((x) => x.id === itemId)
+    items[index].isDone = !items[index].isDone
+    console.log(items[index].isDone, index)
+    setItems(items)
 
     // Strike Using State
-    const tempStrike = { ...strike }
-    const doneStatus = tempStrike[itemId]
-    tempStrike[itemId] = !doneStatus
 
-    setStrike(tempStrike)
     //console.log("TempStrike", tempStrike)
   }
 
@@ -88,7 +80,6 @@ function App() {
           handleDelete={handleDelete}
           handleDone={handleDone}
           items={items}
-          strike={strike}
           selectedValue={selectedValue}
         />
       </div>
